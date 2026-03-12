@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+
+:root {
+    /*Primary Colors */
+    --primary-light: #d6e6df;
+    --primary-dark: #202122;
+    --primary-color: #f8c5a2;
+    --primary-bg: rgb(162, 165, 219, 0.4);
+    /* Secondary Colors */
+    --secondary-light: #c09fb9;
+    --secondary-dark: #3c271f;
+    --secondary-color: #4f5181;
+    --secondary-bg: rgba(169, 91, 96, 0.4);
+}
+
+.wrapper {
+    background-color: var(--primary-bg);
+}
+
+header {
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Nav Bar Stuff */
+nav ul {
+    list-style-type: none;
+    padding: 1rem;
+    margin: 0;
+    /*  flex layout for navbar  */
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgb(162, 165, 219, 0.6);
+    border-radius: 10px;
+    color: var(--primary-color);
+}
+
+nav {
+    background-color: rgb(79, 81, 129, 0.6);
+    border-radius: 20px;
+}
+
+/* basic formatting - nothing to change here at any breakpoint */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    color: var(--secondary-dark);
+}
+
+body {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--secondary-dark);
+    background-color: var(--secondary-color);
+    border: 2.3px solid var(--primary-color);
+    border-radius: 10px;
+    margin: 1.2rem;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.card {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 0 0.5rem;
+}
+
+.button {
+    background-color: var(--secondary-light);
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--secondary-dark);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Responsiveness  */
+@media (max-width: 549px) {
+    header {
+        text-align: center;
+        flex-shrink: 2;
+    }
+}
+
+@media (min-width: 550px) {
+    header {
+        flex-grow: 1;
+    }
+
+    main {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .feature {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media (min-width: 850px) {
+    h1 {
+        flex-grow: 2;
+    }
+
+    .feature {
+        grid-column: 1 / span 3;
+    }
+}
