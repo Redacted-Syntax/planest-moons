@@ -1,60 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root {
-    /*Primary Colors */
-    --primary-light: #d6e6df;
-    --primary-dark: #202122;
-    --primary-color: #f8c5a2;
-    --primary-bg: rgb(162, 165, 219, 0.4);
-    /* Secondary Colors */
-    --secondary-light: #c09fb9;
-    --secondary-dark: #3c271f;
-    --secondary-color: #4f5181;
-    --secondary-bg: rgba(169, 91, 96, 0.4);
-}
-
-.wrapper {
-    background-color: var(--primary-bg);
-}
-
-header {
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem;
-}
-
-/* Nav Bar Stuff */
-nav ul {
-    list-style-type: none;
-    padding: 1rem;
-    margin: 0;
-    /*  flex layout for navbar  */
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-nav a {
-    display: block;
-    color: var(--primary-dark);
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color: rgb(162, 165, 219, 0.6);
-    border-radius: 10px;
-    color: var(--primary-color);
-}
-
-nav {
-    background-color: rgb(79, 81, 129, 0.6);
-    border-radius: 20px;
-}
-
-/* basic formatting - nothing to change here at any breakpoint */
+/* BASIC FORMATTING */
 html {
     box-sizing: border-box;
 }
@@ -63,74 +9,78 @@ html {
 *:before,
 *:after {
     box-sizing: inherit;
-    color: var(--secondary-dark);
 }
 
 body {
-    font-family: "Silkscreen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--secondary-dark);
-    background-color: var(--secondary-color);
-    border: 2.3px solid var(--primary-color);
-    border-radius: 10px;
-    margin: 1.2rem;
-    padding: 1rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 15pt;
+    background-color: black;
+    color: lightpink;
+    margin: 0;
 }
 
-img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.card {
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    padding: 0 0.5rem;
-}
-
-.button {
-    background-color: var(--secondary-light);
-    padding: 0.5rem;
-    border-radius: 5px;
-    color: var(--secondary-dark);
+nav a {
+    color: lightpink;
     text-decoration: none;
-    font-size: 0.8rem;
 }
 
-.button:hover {
-    background-color: var(--primary-color);
+nav ul {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    gap: 14pt;
+    font-size: 16pt;
 }
 
-/* Responsiveness  */
-@media (max-width: 549px) {
-    header {
-        text-align: center;
-        flex-shrink: 2;
-    }
+/* NAVBAR */
+.nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
 }
 
-@media (min-width: 550px) {
-    header {
-        flex-grow: 1;
-    }
-
-    main {
-        display: grid;
-        gap: 1rem;
-    }
-
-    .feature {
-        grid-column: 1 / span 2;
-    }
+/* BUTTONS SECTION */
+.box-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 80px;
 }
 
-@media (min-width: 850px) {
-    h1 {
-        flex-grow: 2;
-    }
+/* shared button styles */
+.link-btn,
+.action-btn {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 15pt;
+    border-radius: 13pt;
+    background-color: #fbd44f;
+    color: black;
+    text-align: center;
+    padding: 15px 30px;
+    width: fit-content;
+    /* sizes to its own text -> narrower + naturally different sizes */
+}
 
-    .feature {
-        grid-column: 1 / span 3;
+.link-btn {
+    text-decoration: none;
+    /* it's an <a>, kill the underline */
+}
+
+.action-btn {
+    border: none;
+    /* it's a <button>, kill the default border */
+}
+
+/* MAKING IT RESPONSIVE */
+@media (min-width: 600px) {
+    nav ul {
+        flex-flow: row;
     }
 }
